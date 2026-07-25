@@ -1,0 +1,128 @@
+default:
+  lr: 0.01
+  wd: 0.0001
+  epochs: 200
+  patience: 50
+  feat_trans: 'no'
+
+  model_name: sage
+  hidden_channels: 128
+  embed_channels: 128
+  dropout: 0.5
+
+  keep_ratio: 0.8
+  noise_std: 0.1
+  consistency_type: mse
+  consistency_weight: 1.0
+  bce_weight: 1.0
+  consistency_rampup_epochs: 0
+  max_pos_weight: 1.0
+  pseudo_conf_low: 0.0
+  pseudo_conf_high: 1.0
+  pseudo_min_weight: 1.0
+  val_select_metric: auroc
+  score_blend_step: 0.1
+
+  num_clusters: 10
+  cluster_method: auto
+  warmup_epochs: 50
+  pseudo_update_interval: 10
+  tracker_metric: variance
+  tracker_reset_on_refresh: true
+  labeled_budget: 100
+  num_restarts: 1
+
+  bmm_max_iters: 200
+  bmm_tol: 1.0e-6
+  bmm_eps: 1.0e-6
+  bmm_min_shape: 1.0e-2
+  bmm_max_shape: 10000.0
+
+reddit:
+  lr: 0.01
+  wd: 0.0001
+  feat_trans: 'no'
+  hidden_channels: 64
+  embed_channels: 64
+
+weibo:
+  lr: 0.1
+  wd: 0.0
+  feat_trans: l1
+  hidden_channels: 128
+  embed_channels: 128
+
+amazon:
+  lr: 0.01
+  wd: 0.0
+  feat_trans: 'no'
+  hidden_channels: 64
+  embed_channels: 64
+
+yelp:
+  lr: 0.01
+  wd: 0.0001
+  feat_trans: 'no'
+  hidden_channels: 64
+  embed_channels: 64
+
+tfinance:
+  lr: 0.01
+  wd: 0.0001
+  feat_trans: l1
+  hidden_channels: 64
+  embed_channels: 64
+  consistency_rampup_epochs: 30
+  max_pos_weight: 20.0
+  pseudo_conf_low: 0.15
+  pseudo_conf_high: 0.85
+  pseudo_min_weight: 0.2
+  val_select_metric: composite
+
+elliptic:
+  lr: 0.01
+  wd: 0.0
+  feat_trans: 'no'
+  hidden_channels: 128
+  embed_channels: 128
+
+tolokers:
+  lr: 0.01
+  wd: 0.0
+  feat_trans: 'no'
+  hidden_channels: 64
+  embed_channels: 64
+  consistency_rampup_epochs: 30
+  max_pos_weight: 20.0
+  pseudo_conf_low: 0.15
+  pseudo_conf_high: 0.85
+  pseudo_min_weight: 0.2
+  val_select_metric: composite
+
+questions:
+  lr: 0.01
+  wd: 0.0
+  feat_trans: 'no'
+  hidden_channels: 64
+  embed_channels: 64
+  consistency_rampup_epochs: 30
+  max_pos_weight: 20.0
+  pseudo_conf_low: 0.15
+  pseudo_conf_high: 0.85
+  pseudo_min_weight: 0.2
+  val_select_metric: composite
+
+dgraphfin:
+  lr: 0.01
+  wd: 0.0
+  feat_trans: l1
+  hidden_channels: 64
+  embed_channels: 64
+
+tsocial:
+  lr: 0.01
+  wd: 0.0
+  epochs: 300
+  feat_trans: l1
+  hidden_channels: 128
+  embed_channels: 128
